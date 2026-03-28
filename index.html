@@ -195,11 +195,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--dark);color:va
 #s4.active .jstep:nth-child(3){opacity:1;transform:none;transition-delay:.24s}
 #s4.active .jstep:nth-child(4){opacity:1;transform:none;transition-delay:.32s}
 #s4.active .jstep:nth-child(5){opacity:1;transform:none;transition-delay:.4s}
-#s4.active .trow:nth-child(2){opacity:1;transform:none;transition-delay:.12s}
-#s4.active .trow:nth-child(3){opacity:1;transform:none;transition-delay:.22s}
-#s4.active .trow:nth-child(4){opacity:1;transform:none;transition-delay:.32s}
-#s4.active .trow:nth-child(5){opacity:1;transform:none;transition-delay:.42s}
-#s4.active .trow:nth-child(6){opacity:1;transform:none;transition-delay:.52s}
+.stack-frase{opacity:0;transform:translateX(20px);transition:opacity .5s,transform .5s;font-size:1.05rem;line-height:1.7;color:var(--rose);font-family:var(--mono);padding:1.4rem 1.6rem;background:rgba(92,26,53,.18);border-radius:10px;border-left:3px solid var(--accent);margin-top:auto}
+#s4.active .stack-frase{opacity:1;transform:none;transition-delay:.3s}
 
 /* ════════════════ S5 MERCADO ════════════════ */
 #s5{background:var(--ink);display:flex;flex-direction:column;padding:3rem 5rem;justify-content:center;gap:1.8rem;position:relative;overflow:hidden}
@@ -221,6 +218,11 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--dark);color:va
 #s5.active .mc:nth-child(1){opacity:1;transform:none;transition-delay:.1s}
 #s5.active .mc:nth-child(2){opacity:1;transform:none;transition-delay:.25s}
 #s5.active .mc:nth-child(3){opacity:1;transform:none;transition-delay:.4s}
+.mblock{display:flex;flex-direction:column;gap:.5rem;position:relative;z-index:1}
+.mrefs{display:flex;flex-wrap:wrap;gap:.3rem 1.4rem;padding:.5rem 0 0;border-top:1px solid rgba(193,122,138,.12);opacity:0;transition:opacity .5s .6s}
+#s5.active .mrefs{opacity:1}
+.mrefs span{font-family:var(--mono);font-size:.52rem;color:rgba(193,122,138,.38);white-space:nowrap}
+.mrefs sup{font-size:.45rem;vertical-align:super}
 
 /* ════════════════ S6 MODELO ════════════════ */
 #s6{background:var(--cream);color:var(--ink);display:flex;flex-direction:column;padding:3rem 5rem;justify-content:center;gap:1.8rem}
@@ -453,40 +455,73 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--dark);color:va
   <div class="stag">03 / 11</div>
 </div>
 
-<!-- S4 -->
-<div class="slide" id="s4">
-  <div class="noise"></div>
-  <div class="L">
-    <div class="slabel">Como Funciona</div>
-    <h2>A jornada<br><em>da cliente</em></h2>
-    <div class="jstep"><div class="jn">01</div><div class="jt"><strong>Primeiro contato</strong> — mensagem no WhatsApp</div></div>
-    <div class="jstep"><div class="jn">02</div><div class="jt"><strong>Formulário de onboarding</strong> — estilo, medidas, cores</div></div>
-    <div class="jstep"><div class="jn">03</div><div class="jt"><strong>Fotos de análise</strong> — biotipo e coloração pessoal</div></div>
-    <div class="jstep"><div class="jn">04</div><div class="jt"><strong>IA cria o perfil</strong> — paleta, cortes, combinações</div></div>
-    <div class="jstep"><div class="jn">05</div><div class="jt"><strong>Consultoria diária</strong> — looks, capsule wardrobe</div></div>
-  </div>
-  <div class="R">
-    <div class="slabel">Stack Tecnológico</div>
-    <div class="trow"><span class="tico">📱</span><div class="tinfo"><h4>WhatsApp Business API</h4><p>Canal de acesso — zero atrito</p></div></div>
-    <div class="trow"><span class="tico">🧠</span><div class="tinfo"><h4>LLM (GPT / Claude API)</h4><p>Motor de diálogo e consultoria</p></div></div>
-    <div class="trow"><span class="tico">👁️</span><div class="tinfo"><h4>Computer Vision</h4><p>Análise de biotipo por foto</p></div></div>
-    <div class="trow"><span class="tico">🎨</span><div class="tinfo"><h4>Colorimetria IA</h4><p>Paleta sazonal e tons de pele</p></div></div>
-    <div class="trow"><span class="tico">💳</span><div class="tinfo"><h4>SaaS Recorrente</h4><p>Stripe / Pix automatizado</p></div></div>
-  </div>
-  <div class="stag">04 / 11</div>
-</div>
-
 <!-- S5 -->
 <div class="slide" id="s5">
   <div class="noise"></div><div class="glow"></div>
   <div class="slabel">Mercado</div>
   <h2>Oportunidade<br><em>no Brasil</em></h2>
-  <div class="mgrid">
-    <div class="mc"><div class="mlabel">TAM — Mercado Total</div><div class="val">R$ 314 bi</div><div class="desc">Varejo de moda brasileiro em 2025, crescendo 6,8% ao ano.</div><div class="scope">Fonte: IEMI 2025</div></div>
-    <div class="mc"><div class="mlabel">SAM — Mercado Endereçável</div><div class="val">R$ 60 bi</div><div class="desc">Mulheres 18–45 que compram moda online. 66% preferem canal digital.</div><div class="scope">Opinion Box 2025</div></div>
-    <div class="mc"><div class="mlabel">SOM — Fatia Inicial</div><div class="val">R$ 2 bi</div><div class="desc">Consultoria de estilo digital — sem concorrente local forte.</div><div class="scope">Janela de oportunidade aberta</div></div>
+  <div class="mblock">
+    <div class="mgrid">
+
+  <div class="mc">
+    <div class="mlabel">TAM — Mercado Total</div>
+    <div class="val">R$ 314,9 bi</div>
+    <div class="desc">
+      Varejo de vestuário brasileiro em 2025,
+      crescendo 6,8% ao ano.
+    </div>
+    <div class="scope">
+      IEMI, dez. 2025 ·
+      <a href="https://iemi.com.br/varejo-de-vestuario-deve-crescer-apesar-dos-desafios-de-2025/" 
+         target="_blank" 
+         style="color:inherit;opacity:.6;font-size:.55rem">
+        iemi.com.br ↗
+      </a>
+    </div>
   </div>
-  <div class="stag">05 / 11</div>
+
+  <div class="mc">
+    <div class="mlabel">SAM — Mercado Endereçável</div>
+    <div class="val">59%</div>
+    <div class="desc">
+      Das compras online no Brasil são feitas por mulheres —
+      o público principal da StyleAI, já no digital,
+      já comprando moda.
+    </div>
+    <div class="scope">
+      ABComm, 2024 ·
+      <a href="https://www.ecommercebrasil.com.br/noticias/mulheres-lideram-compras-online-2024-abcomm" 
+         target="_blank" 
+         style="color:inherit;opacity:.6;font-size:.55rem">
+        ecommercebrasil.com.br ↗
+      </a>
+    </div>
+  </div>
+
+  <div class="mc">
+    <div class="mlabel">SOM — A Oportunidade Real</div>
+    <div class="val" style="font-size:1.4rem;line-height:1.3">
+      Dor sem solução
+    </div>
+    <div class="desc">
+      67% das mulheres acham traumático escolher look
+      para eventos. 48% se sentem julgadas pelas roupas
+      no trabalho. Nenhuma IA no Brasil foi construída
+      para resolver isso.
+    </div>
+    <div class="scope">
+      Escola de Estilo · AICI Brasil, 2025 ·
+      <a href="https://escoladeestilo.com.br/mercado-consultoria-imagem-em-alta-brasil/" 
+         target="_blank" 
+         style="color:inherit;opacity:.6;font-size:.55rem">
+        escoladeestilo.com.br ↗
+      </a>
+    </div>
+  </div>
+
+</div>
+  </div>
+  <div class="stag">04 / 10</div>
 </div>
 
 <!-- S6 -->
@@ -499,7 +534,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--dark);color:va
     <div class="plan feat"><div class="pbadge">Mais popular</div><div class="pname">Premium</div><div class="pprice">R$99</div><div class="pperiod">/mês</div><ul class="pfeats"><li>Tudo do Basic</li><li>Análise colorimetria completa</li><li>Looks ilimitados</li><li>Capsule wardrobe mensal</li><li>Suporte prioritário</li></ul></div>
     <div class="plan"><div class="pname">Empresas</div><div class="pprice">R$299</div><div class="pperiod">/mês</div><ul class="pfeats"><li>Multi-usuário (até 10)</li><li>API para e-commerces</li><li>Dashboard analytics</li><li>White-label disponível</li></ul></div>
   </div>
-  <div class="stag">06 / 11</div>
+  <div class="stag">05 / 10</div>
 </div>
 
 <!-- S7 -->
@@ -519,7 +554,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--dark);color:va
     </tbody>
   </table>
   <div class="cfooter">✦ único canal 100% WhatsApp com foco no mercado brasileiro</div>
-  <div class="stag">07 / 11</div>
+  <div class="stag">06 / 10</div>
 </div>
 
 <!-- S8 -->
@@ -541,7 +576,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--dark);color:va
       <div class="prow"><span class="pl">Q2 2027</span><div class="pb"><div class="pf" style="width:100%"></div></div><span class="pv">R$ 150.000</span></div>
     </div>
   </div>
-  <div class="stag">08 / 11</div>
+  <div class="stag">07 / 10</div>
 </div>
 
 <!-- S9 -->
@@ -555,11 +590,11 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--dark);color:va
     <div class="wc"><span class="we">💹</span><div class="wtext"><h3>Mercado aquecido</h3><p>Varejo de moda cresce 6,8%/ano e bate R$ 314 bi em 2025. Demanda por personalização em alta.</p></div></div>
     <div class="wc"><span class="we">🌍</span><div class="wtext"><h3>Janela local aberta</h3><p>Apps globais não têm foco no Brasil nem canal WhatsApp. Território livre para ocupar.</p></div></div>
   </div>
-  <div class="stag">09 / 11</div>
+  <div class="stag">08 / 10</div>
 </div>
 
 <!-- S10 -->
-<div class="slide" id="s10">
+<!-- <div class="slide" id="s10">
   <div class="noise"></div>
   <div class="L">
     <div class="slabel">O que buscamos</div>
@@ -573,8 +608,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--dark);color:va
     <div class="ask"><span class="ask-ic">📣</span><div class="ask-t"><h4>Validação de Mercado</h4><p>Apoio para estruturar os primeiros 50 beta testers.</p></div></div>
     <div class="ask"><span class="ask-ic">💰</span><div class="ask-t"><h4>Captação Futura</h4><p>Preparação para rodada seed de R$ 300k.</p></div></div>
   </div>
-  <div class="stag">10 / 11</div>
-</div>
+  <div class="stag">09 / 10</div>
+</div> -->
 
 <!-- S11 -->
 <div class="slide" id="s11">
@@ -582,13 +617,13 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--dark);color:va
   <div class="cnt">
     <div class="ey">StyleAI · 2026</div>
     <h1><span class="ln">Vamos vestir</span><span class="ln"><em>o futuro</em></span><span class="ln">juntos?</span></h1>
-    <p class="sub2">Seu estilista pessoal no WhatsApp, powered by IA.<br>Moda acessível para toda mulher brasileira.</p>
+    <p class="sub2">Sua assistente de estilo pessoal no WhatsApp.<br>Moda acessível para toda mulher brasileira.</p>
     <div class="clinks">
       <a href="mailto:contatopaulagonzalez@gmail.com" class="clink">contatopaulagonzalez@gmail.com</a>
       <a href="https://www.paulagonzalez.com.br/" class="clink">paulagonzalez.com.br</a>
     </div>
   </div>
-  <div class="stag">11 / 11</div>
+  <div class="stag">10 / 10</div>
 </div>
 
 </div>
